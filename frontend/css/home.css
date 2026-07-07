@@ -1,0 +1,170 @@
+@import url('https://fonts.googleapis.com/css2?family=Forum&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Cormorant+Garamond:wght@300;400;500;600&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary-color: #b7d2fa;
+    --secondary-color: #f2f9ffe8;
+    --tertiary-color: #707e89e8;
+    --background-color: #18020a;
+    --text-color: linear-gradient(135deg,
+            #b7d2fa 0%,
+            #7a869a 15%,
+            #686a6c 20%,
+            #eaf2ff 35%,
+            #ffffff 50%,
+            #686a6c 55%,
+            #b7c4d8 80%,
+            #b7d2fa 100%);
+
+}
+
+.gradient-text {
+    background: var(--text-color);
+    background-clip: text;
+    color: transparent;
+}
+
+.body {
+    background-color: var(--background-color);
+    font-family: 'Forum';
+    font-weight: bolder;
+    font-size: 3vh;
+    padding: 5vh 20vh;
+}
+
+.header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+p.gradient-text.title {
+    font-family: 'Cinzel', serif;
+    font-weight: 600;
+    font-size: 9vh;
+}
+
+.header-content .title {
+    font-size: 10vh;
+}
+
+.header-content p {
+    font-size: 6vh;
+}
+
+.logo-container img {
+    height: 30vh;
+    filter: hue-rotate(190deg);
+}
+
+.nav {
+    margin: 5vh 0 8vh 0;
+}
+
+.nav ul {
+    width: 100%;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10vh;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: transparent;
+    transition: .3s;
+}
+
+nav ul li a:hover {
+    color: var(--primary-color);
+}
+
+.main p {
+    text-align: justify;
+}
+
+.highlights {
+    width: 100%;
+    margin-top: 10vh;
+}
+
+.highlights h2 {
+    text-align: center;
+    margin-bottom: 5vh;
+}
+
+.carousel {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2em;
+}
+
+.carousel-images {
+    overflow: hidden;
+    width: 60vw;
+    height: 65vh;
+}
+
+.image{
+    border-radius: 50%;
+}
+
+.slide {
+    width: 50%;
+    height: auto;
+    display: none;
+    object-fit: cover;
+    border: 10px solid;
+    border-image: var(--text-color) 1;
+    cursor: pointer;
+    clip-path: inset(0 round 10px);
+}
+
+.slide.active {
+    display: block;
+}
+
+.carousel-btn {
+    position: relative;
+    width: 1.6em;
+    height: 1.6em;
+
+    border: none;
+    border-radius: 50%;
+    font-size: 2em;
+    cursor: pointer;
+    background: var(--text-color);
+    color: var(--background-color);
+    z-index: 0;
+}
+
+.carousel-btn:hover {
+    background: var(--text-color);
+    background-clip: text;
+    color: transparent;
+}
+
+.carousel-btn:hover::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    padding: 2px;
+
+    background: var(--text-color);
+    border-radius: 50%;
+
+    -webkit-mask:
+        linear-gradient(#fff 0 0) content-box,
+        linear-gradient(#fff 0 0);
+
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    pointer-events: none;
+}

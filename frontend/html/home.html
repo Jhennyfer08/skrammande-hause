@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Explore a Skrämmande Häuse, um museu virtual de pinturas clássicas onde obras centenárias ganham vida em uma experiência imersiva inspirada na Era Vitoriana.">
+    <link rel="shortcut icon" href="../ico/pallete.ico" type="image/x-icon">
+    <link rel="stylesheet" href="../css/home.css">
+    <script src="../js/home.js"></script>
+    <title>Skrämmande Häuse</title>
+</head>
+
+<body class="body" onload="init()">
+    <header class="header" id="home">
+        <div class="logo-container">
+            <img src="../img/brasao.png" alt="Brasão Skrämmande Hause">
+        </div>
+
+        <div class="header-content">
+            <p class="gradient-text title">Skrämmande Häuse</p>
+            <p class="gradient-text">
+                𓂃🖌 Galeria de Arte Clássica
+            </p>
+        </div>
+
+        <div class="logo-container">
+            <img src="../img/brasao.png" alt="Brasão Skrämmande Hause">
+        </div>
+    </header>
+
+    <nav class="nav">
+        <ul class="gradient-text">
+            <li><a href="#home">Ínicio</a></li>
+            <li><a href="#highlights">Destaques</a></li>
+            <li><a href="#galery">Galeria</a></li>
+            <li><a href="#contacts">Contatos</a></li>
+        </ul>
+    </nav>
+
+    <main class="main">
+
+        <section class="description">
+            <p class="gradient-text">A <strong>Skrämmande Häuse</strong> é uma casa onde os limites entre o vivo
+                e o inanimado deixam de existir. Nesta galeria de arte, as obras
+                transcendem o tempo, as eras e o próprio espaço. Pinturas criadas há mais
+                de um século desafiam a passagem dos anos e chegam diretamente à sua tela.
+                Aprecie sua jornada enquanto percorre cada ambiente e descubra o mundo pela
+                visão daqueles que já partiram.
+            </p>
+        </section>
+
+        <section class="highlights" id="highlights">
+
+            <h2 class="gradient-text">Obras em Destaque</h2>
+
+            <div class="carousel">
+                <button type="button" class="carousel-btn " onclick="previousImage()">❮</button>
+
+                <img src="../img/pinturas/pintura_1_2.png" alt="Pintura 1" class="slide active">
+
+                <img src="../img/pinturas/pintura_2.png" alt="Pintura 2" class="slide">
+
+                <img src="../img/pinturas/pintura_3.png" alt="Pintura 3" class="slide">
+
+                <button type="button" class="carousel-btn" onclick="nextImage()">❯</button>
+            </div>
+
+        </section>
+    </main>
+
+    <footer></footer>
+</body>
+
+</html>
