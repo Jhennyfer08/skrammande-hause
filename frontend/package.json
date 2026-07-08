@@ -1,0 +1,12 @@
+{
+    "name": "skrammande-hause",
+    "version": "0.1.0",
+    "main": "server.js",
+    "scripts": {
+        "start": "node --watch server.js"
+    },
+    "type": "module",
+    "dependencies": {
+        "express": "^5.2.1"
+    }
+}

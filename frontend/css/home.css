@@ -34,12 +34,13 @@
     background-color: var(--background-color);
     font-family: 'Forum';
     font-weight: bolder;
-    font-size: 3vh;
-    padding: 5vh 20vh;
+    font-size: 1.7vw;
+    padding: 3vw;
 }
 
 .header {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
 }
@@ -47,24 +48,24 @@
 p.gradient-text.title {
     font-family: 'Cinzel', serif;
     font-weight: 600;
-    font-size: 9vh;
-}
-
-.header-content .title {
-    font-size: 10vh;
+    font-size: 6vw;
 }
 
 .header-content p {
-    font-size: 6vh;
+    font-size: 4vw;
+    text-align: center;
 }
 
 .logo-container img {
-    height: 30vh;
+    height: 20vw;
     filter: hue-rotate(190deg);
 }
 
 .nav {
-    margin: 5vh 0 8vh 0;
+    margin: 5vw 0;
+    border-radius: 2rem;
+    padding: 1vw;
+    background: var(--text-color);
 }
 
 .nav ul {
@@ -72,17 +73,18 @@ p.gradient-text.title {
     display: inline-flex;
     justify-content: center;
     align-items: center;
-    gap: 10vh;
+    gap: 5vw;
 }
 
-nav ul li a {
+.nav ul li a {
+    display: inline-block;
+    color: var(--background-color);
     text-decoration: none;
-    color: transparent;
-    transition: .3s;
+    transition: ease-in-out .2s;
 }
 
-nav ul li a:hover {
-    color: var(--primary-color);
+.nav ul li a:hover {
+    transform: scale(1.2);
 }
 
 .main p {
@@ -91,25 +93,20 @@ nav ul li a:hover {
 
 .highlights {
     width: 100%;
-    margin-top: 10vh;
+    margin-top: 5vw;
 }
 
-.highlights h2 {
+.highlights p {
     text-align: center;
-    margin-bottom: 5vh;
+    margin-bottom: 3vw;
+    font-size: 4vw;
 }
 
 .carousel {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 2em;
-}
-
-.carousel-images {
-    overflow: hidden;
-    width: 60vw;
-    height: 65vh;
+    gap: 2vw;
 }
 
 .image{
@@ -117,11 +114,11 @@ nav ul li a:hover {
 }
 
 .slide {
-    width: 50%;
+    width: 40vw;
     height: auto;
     display: none;
     object-fit: cover;
-    border: 10px solid;
+    border: .7vw solid transparent;
     border-image: var(--text-color) 1;
     cursor: pointer;
     clip-path: inset(0 round 10px);
@@ -133,12 +130,12 @@ nav ul li a:hover {
 
 .carousel-btn {
     position: relative;
-    width: 1.6em;
-    height: 1.6em;
+    width: 5.5vw;
+    height: 5.5vw;
 
     border: none;
     border-radius: 50%;
-    font-size: 2em;
+    font-size: 3.5vw;
     cursor: pointer;
     background: var(--text-color);
     color: var(--background-color);
@@ -155,7 +152,7 @@ nav ul li a:hover {
     content: "";
     position: absolute;
     inset: 0;
-    padding: 2px;
+    padding: .2vw;
 
     background: var(--text-color);
     border-radius: 50%;
@@ -168,3 +165,16 @@ nav ul li a:hover {
     mask-composite: exclude;
     pointer-events: none;
 }
+
+@media (max-width:768px){
+    .body{
+        font-size: 4vw;
+    }
+    
+    .slide{
+        width: 70vw;
+        border: 1.6vw solid transparent;
+        border-image: var(--text-color) 1;
+    }
+}
+
