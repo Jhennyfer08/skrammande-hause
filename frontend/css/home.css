@@ -17,9 +17,9 @@
             #7a869a 15%,
             #686a6c 20%,
             #eaf2ff 35%,
-            #ffffff 50%,
-            #686a6c 55%,
-            #b7c4d8 80%,
+            #686a6c 50%,
+            #ffffff 60%,
+            #4e5459 80%,
             #b7d2fa 100%);
 
 }
@@ -33,9 +33,6 @@
 .body {
     background-color: var(--background-color);
     font-family: 'Forum';
-    font-weight: bolder;
-    font-size: 1.7vw;
-    padding: 3vw;
 }
 
 .header {
@@ -43,12 +40,13 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    margin: 0 3vw;
 }
 
 p.gradient-text.title {
     font-family: 'Cinzel', serif;
     font-weight: 600;
-    font-size: 6vw;
+    font-size: 5vw;
 }
 
 .header-content p {
@@ -61,14 +59,17 @@ p.gradient-text.title {
     filter: hue-rotate(190deg);
 }
 
-.nav {
+.header .nav {
+    width: 100%;
+    font-size: 1.7vw;
+    font-weight: bolder;
     margin: 5vw 0;
     border-radius: 2rem;
     padding: 1vw;
     background: var(--text-color);
 }
 
-.nav ul {
+.header .nav ul {
     width: 100%;
     display: inline-flex;
     justify-content: center;
@@ -76,44 +77,52 @@ p.gradient-text.title {
     gap: 5vw;
 }
 
-.nav ul li a {
+.header .nav ul li a {
     display: inline-block;
     color: var(--background-color);
     text-decoration: none;
     transition: ease-in-out .2s;
 }
 
-.nav ul li a:hover {
+.header .nav ul li a:hover {
     transform: scale(1.2);
+}
+
+.main {
+    font-weight: bolder;
+    font-size: 1.7vw;
+    padding: 0 3vw;
 }
 
 .main p {
     text-align: justify;
 }
 
-.highlights {
+.highlights,
+.gallery {
     width: 100%;
     margin-top: 5vw;
 }
 
-.highlights p {
+.highlights p,
+.gallery p {
     text-align: center;
     margin-bottom: 3vw;
     font-size: 4vw;
 }
 
-.carousel {
+.highlights .carousel {
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 2vw;
 }
 
-.image{
+.highlights .image {
     border-radius: 50%;
 }
 
-.slide {
+.highlights .slide {
     width: 40vw;
     height: auto;
     display: none;
@@ -124,11 +133,11 @@ p.gradient-text.title {
     clip-path: inset(0 round 10px);
 }
 
-.slide.active {
+.highlights .slide.active {
     display: block;
 }
 
-.carousel-btn {
+.button {
     position: relative;
     width: 5.5vw;
     height: 5.5vw;
@@ -142,13 +151,13 @@ p.gradient-text.title {
     z-index: 0;
 }
 
-.carousel-btn:hover {
+.button:hover {
     background: var(--text-color);
     background-clip: text;
     color: transparent;
 }
 
-.carousel-btn:hover::before {
+.button:hover::before {
     content: "";
     position: absolute;
     inset: 0;
@@ -166,15 +175,81 @@ p.gradient-text.title {
     pointer-events: none;
 }
 
-@media (max-width:768px){
-    .body{
+.gallery {
+    display: flex;
+    flex-direction: column;
+}
+
+.gallery .pictures-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.gallery .column {
+    display: flex;
+    flex-direction: column;
+    gap: 1vw;
+}
+
+.picture {
+    width: 30vw;
+    height: auto;
+    object-fit: cover;
+    border: .7vw solid transparent;
+    border-image: var(--text-color) 1;
+    cursor: pointer;
+    clip-path: inset(0 round 10px);
+}
+
+.return {
+    position: relative;
+}
+
+.return .button {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+}
+
+@media (max-width:768px) {
+
+    .main,
+    .header .nav {
         font-size: 4vw;
     }
-    
-    .slide{
+
+    .header .logo-container img {
+        height: 35vw;
+    }
+
+    p.gradient-text.title {
+        font-size: 6vw;
+    }
+
+    .header-content p {
+        font-size: 5vw;
+    }
+
+    .highlights .slide,
+    .column .picture {
         width: 70vw;
         border: 1.6vw solid transparent;
         border-image: var(--text-color) 1;
     }
-}
 
+    .gallery .pictures-container
+    {
+        display: flex;
+        flex-direction: column;
+        gap: 3vw;
+    }
+
+    .column{
+        display: flex;
+        align-items: center;
+    }
+
+    .column .picture{
+        width: 85vw;
+    }
+}

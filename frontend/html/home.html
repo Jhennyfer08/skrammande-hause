@@ -15,7 +15,7 @@
 <body class="body" onload="init()">
     <header class="header" id="home">
         <div class="logo-container">
-            <img src="../img/brasao.png" alt="Brasão Skrämmande Hause">
+            <img src="../ico/brasao.png" alt="Brasão Skrämmande Hause">
         </div>
 
         <div class="header-content">
@@ -24,16 +24,17 @@
                 𓂃🖌 Galeria de Arte Clássica
             </p>
         </div>
+
+        <nav class="nav">
+            <ul class="gradient-text">
+                <li><a href="#home">Ínicio</a></li>
+                <li><a href="#highlights">Destaques</a></li>
+                <li><a href="#gallery">Galeria</a></li>
+                <li><a href="#contacts">Contatos</a></li>
+            </ul>
+        </nav>
     </header>
 
-    <nav class="nav">
-        <ul class="gradient-text">
-            <li><a href="#home">Ínicio</a></li>
-            <li><a href="#highlights">Destaques</a></li>
-            <li><a href="#galery">Galeria</a></li>
-            <li><a href="#contacts">Contatos</a></li>
-        </ul>
-    </nav>
 
     <main class="main">
 
@@ -48,22 +49,52 @@
         </section>
 
         <section class="highlights" id="highlights">
-
             <p class="gradient-text">Obras em Destaque</p>
 
             <div class="carousel">
-                <button type="button" class="carousel-btn " onclick="previousImage()">❮</button>
+                <button type="button" class="button carousel-btn" onclick="previousImage()">❮</button>
 
-                <img src="../img/pinturas/pintura_1_2.png" alt="Pintura 1" class="slide active">
+                <img src="../img/pinturas/witcher-peace.png" alt="Pintura 1" class="slide active">
 
-                <img src="../img/pinturas/pintura_2.png" alt="Pintura 2" class="slide">
+                <img src="../img/pinturas/lucrev-madam.png" alt="Pintura 2" class="slide">
 
-                <img src="../img/pinturas/pintura_3.png" alt="Pintura 3" class="slide">
+                <img src="../img/pinturas/serena-bridge.jpg" alt="Pintura 3" class="slide">
 
-                <button type="button" class="carousel-btn" onclick="nextImage()">❯</button>
+                <button type="button" class="button carousel-btn" onclick="nextImage()">❯</button>
             </div>
 
         </section>
+
+
+        <section class="gallery" id="gallery">
+            <p class="gradient-text">Galeria</p>
+
+            <section class="pictures-container">
+                <div class="column">
+                    <img src="../img/pinturas/witcher-peace.png" alt="couple" class="picture">
+                    <img src="../img/pinturas/lucrev-madam.png" alt="" class="picture">
+                    <img src="../img/pinturas/witcher-forgotten.jpg" alt="forgotten" class="picture">
+                </div>
+
+                <div class="column">
+                    <img src="../img/pinturas/serena-lost-princcess.jpg" alt="forgotten" class="picture">
+                    <img src="../img/pinturas/rosanov-couple.jpg" alt="couple" class="picture">
+                    <img src="../img/pinturas/witcher-dark_castle.jpg" alt="" class="picture">
+                </div>
+
+                <div class="column">
+                    <img src="../img/pinturas/rosanov-couple.jpg" alt="couple" class="picture">
+                    <img src="../img/pinturas/lucrev-madam.png" alt="" class="picture">
+                    <img src="../img/pinturas/witcher-believer.jpg" alt="forgotten" class="picture">
+                </div>
+            </section>
+        </section>
+
+        <div class="return">
+            <a href="#home" class="return-btn">
+                <button type="button" class="button ">▲</button>
+            </a>
+        </div>
     </main>
 
     <footer></footer>
