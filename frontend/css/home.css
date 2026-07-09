@@ -105,7 +105,8 @@ p.gradient-text.title {
 }
 
 .highlights p,
-.gallery p {
+.gallery p,
+.address p {
     text-align: center;
     margin-bottom: 3vw;
     font-size: 4vw;
@@ -188,15 +189,15 @@ p.gradient-text.title {
 .gallery .column {
     display: flex;
     flex-direction: column;
-    gap: 1vw;
+    gap: .5vw;
 }
 
 .picture {
-    width: 30vw;
+    width: 22.9vw;
     height: auto;
     object-fit: cover;
-    border: .7vw solid transparent;
-    border-image: var(--text-color) 1;
+    /* border: .7vw solid transparent;
+    border-image: var(--text-color) 1; */
     cursor: pointer;
     clip-path: inset(0 round 10px);
 }
@@ -207,8 +208,71 @@ p.gradient-text.title {
 
 .return .button {
     position: absolute;
-    right: 0;
-    bottom: 0;
+    right: 1.5vw;
+    bottom: 5vw;
+}
+
+.footer {
+    font-weight: bolder;
+}
+
+.address {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 5vw 0vw;
+}
+
+.address iframe {
+    width: 45.8vw;
+    height: 20vw;
+    border: .7vw solid transparent;
+    border-image: var(--text-color) 1;
+    clip-path: inset(0 round 10px);
+}
+
+.info {
+    width: 100%;
+    color: var(--background-color);
+    font-size: 1.3vw;
+    font-weight: 600;
+    background: var(--text-color);
+}
+
+.info p,
+.info a {
+    filter: drop-shadow(1px 1px #fff);
+}
+
+.info li {
+    filter: drop-shadow(-1px .8px #fff);
+}
+
+.info div,
+.info p {
+    padding: 1.2vw 3vw;
+}
+
+p.title {
+    font-size: 3vw;
+}
+
+ul {
+    list-style: none;
+}
+
+.info .social ul {
+    display: flex;
+    flex-direction: row;
+    gap: 2vw;
+}
+
+.info span {
+    width: 100%;
+    height: .3vw;
+    display: block;
+    border-bottom: .1vw solid #fff;
+    background-color: var(--background-color);
 }
 
 @media (max-width:768px) {
@@ -230,26 +294,46 @@ p.gradient-text.title {
         font-size: 5vw;
     }
 
-    .highlights .slide,
-    .column .picture {
+    .highlights .slide {
         width: 70vw;
         border: 1.6vw solid transparent;
         border-image: var(--text-color) 1;
     }
 
-    .gallery .pictures-container
-    {
+    .button {
+        width: 7vw;
+        height: 7vw;
+    }
+
+    .gallery .pictures-container {
         display: flex;
         flex-direction: column;
         gap: 3vw;
     }
-
-    .column{
+    
+    .gallery .column {
         display: flex;
         align-items: center;
+        gap: 3vw;
     }
 
-    .column .picture{
+    .column .picture {
         width: 85vw;
+    }
+
+    .address iframe {
+        width: 85vw;
+        height: 40vw;
+        border: 1.6vw solid transparent;
+        border-image: var(--text-color) 1;
+    }
+
+    .info div,
+    .info p {
+        font-size: 2.7vw;
+    }
+
+    p.title {
+        font-size: 5vw;
     }
 }
