@@ -44,6 +44,18 @@ function previousImage() {
     showImage(current);
 }
 
+function openLightbox(element) {
+    let lightbox = document.getElementById('lightbox');
+    let lightboxImg = document.getElementById('lightboxImg');
+
+    lightboxImg.src = element.src;
+    lightbox.style.display = 'flex';
+}
+
+function closeLightbox() {
+    document.getElementById('lightbox').style.display = 'none';
+}
+
 function init() {
     showImage(0);
 

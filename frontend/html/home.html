@@ -15,7 +15,7 @@
 <body class="body" onload="init()">
     <header class="header" id="home">
         <div class="logo-container">
-            <img src="../ico/brasao.png" alt="Brasão Skrämmande Hause">
+            <img src="../ico/brasao.png" alt="Brasão Skrämmande Hause" onclick="openLightbox(this)">
         </div>
 
         <div class="header-content">
@@ -54,11 +54,12 @@
             <div class="carousel">
                 <button type="button" class="button carousel-btn" onclick="previousImage()">❮</button>
 
-                <img src="../img/pinturas/witcher-peace.png" alt="Pintura 1" class="slide active">
+                <img src="../img/pinturas/witcher-peace.png" alt="Pintura 1" class="slide active"
+                    onclick="openLightbox(this)">
 
-                <img src="../img/pinturas/lucrev-madam.png" alt="Pintura 2" class="slide">
+                <img src="../img/pinturas/lucrev-madam.png" alt="Pintura 2" class="slide" onclick="openLightbox(this)">
 
-                <img src="../img/pinturas/serena-bridge.jpg" alt="Pintura 3" class="slide">
+                <img src="../img/pinturas/serena-bridge.jpg" alt="Pintura 3" class="slide" onclick="openLightbox(this)">
 
                 <button type="button" class="button carousel-btn" onclick="nextImage()">❯</button>
             </div>
@@ -71,37 +72,49 @@
 
             <section class="pictures-container">
                 <div class="column">
-                    <img src="../img/pinturas/witcher-peace.png" alt="couple" class="picture">
-                    <img src="../img/pinturas/lucrev-madam.png" alt="" class="picture">
-                    <img src="../img/pinturas/witcher-forgotten.jpg" alt="forgotten" class="picture">
-                    <img src="../img/pinturas/witcher-dark_castle.jpg" alt="forgotten" class="picture">
-                    <img src="../img/pinturas/lucrev-madam.png" alt="" class="picture">
+                    <img src="../img/pinturas/witcher-peace.png" alt="couple" class="picture"
+                        onclick="openLightbox(this)">
+                    <img src=" ../img/pinturas/lucrev-madam.png" alt="" class="picture" onclick="openLightbox(this)">
+                    <img src=" ../img/pinturas/witcher-forgotten.jpg" alt="forgotten" class="picture"
+                        onclick="openLightbox(this)">
+                    <img src=" ../img/pinturas/witcher-dark_castle.jpg" alt="forgotten" class="picture"
+                        onclick="openLightbox(this)">
+                    <img src=" ../img/pinturas/lucrev-madam.png" alt="" class="picture" onclick="openLightbox(this)">
                 </div>
 
-                <div class="column">
-                    <img src="../img/pinturas/serena-lost-princcess.jpg" alt="forgotten" class="picture">
-                    <img src="../img/pinturas/witcher-dark_castle.jpg" alt="" class="picture">
-                    <img src="../img/pinturas/fantasy-evening.jpg" alt="couple" class="picture">
+                <div class=" column">
+                    <img src="../img/pinturas/serena-lost-princcess.jpg" alt="forgotten" class="picture"
+                        onclick="openLightbox(this)">
+                    <img src=" ../img/pinturas/witcher-dark_castle.jpg" alt="" class="picture"
+                        onclick="openLightbox(this)">
+                    <img src=" ../img/pinturas/fantasy-evening.jpg" alt="couple" class="picture"
+                        onclick="openLightbox(this)">
                 </div>
 
-                <div class="column">
-                    <img src="../img/pinturas/rosanov-couple.jpg" alt="couple" class="picture">
-                    <img src="../img/pinturas/rosanov-london-bridge.jpg" alt="" class="picture">
-                    <img src="../img/pinturas/witcher-believer.jpg" alt="forgotten" class="picture">
-                    <img src="../img/pinturas/rosanov-couple.jpg" alt="couple" class="picture">
+                <div class=" column">
+                    <img src="../img/pinturas/rosanov-couple.jpg" alt="couple" class="picture"
+                        onclick="openLightbox(this)">
+                    <img src=" ../img/pinturas/rosanov-london-bridge.jpg" alt="" class="picture"
+                        onclick="openLightbox(this)">
+                    <img src=" ../img/pinturas/witcher-believer.jpg" alt="forgotten" class="picture"
+                        onclick="openLightbox(this)">
+                    <img src=" ../img/pinturas/rosanov-couple.jpg" alt="couple" class="picture"
+                        onclick="openLightbox(this)">
                 </div>
 
-                <div class="column">
-                    <img src="../img/pinturas/witcher-dark_castle.jpg" alt="forgotten" class="picture">
-                    <img src="../img/pinturas/serena-the-coroation.jpg" alt="couple" class="picture">
-                    <img src="../img/pinturas/lucrev-madam.png" alt="" class="picture">
-                    <img src="../img/pinturas/serena-the-coroation.jpg" alt="couple" class="picture">
+                <div class=" column">
+                    <img src="../img/pinturas/witcher-dark_castle.jpg" alt="forgotten" class="picture"
+                        onclick="openLightbox(this)">
+                    <img src=" ../img/pinturas/serena-the-coroation.jpg" alt="couple" class="picture"
+                        onclick="openLightbox(this)">
+                    <img src=" ../img/pinturas/lucrev-madam.png" alt="" class="picture" onclick="openLightbox(this)">
+                    <img src=" ../img/pinturas/serena-the-coroation.jpg" alt="couple" class="picture"
+                        onclick="openLightbox(this)">
                 </div>
             </section>
+
         </section>
     </main>
-
-
 
     <footer class="footer">
 
@@ -148,6 +161,11 @@
         </section>
 
     </footer>
+
+    <div class=" lightbox" id="lightbox" onclick="closeLightbox()">
+        <span class="close"> &times</span>
+        <img src="" alt="" class="lightboxImg" id="lightboxImg">
+    </div>
 </body>
 
 </html>

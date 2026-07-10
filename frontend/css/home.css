@@ -199,7 +199,34 @@ p.gradient-text.title {
     /* border: .7vw solid transparent;
     border-image: var(--text-color) 1; */
     cursor: pointer;
-    clip-path: inset(0 round 10px);
+    clip-path: inset(0 round .7vw);
+}
+
+.lightbox{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: none; 
+    align-items: center;
+    justify-content: center;
+    background: #18020ace;
+}
+
+.lightboxImg{
+    max-width: 80%;
+    max-height: 80%;
+    border-radius: .7vw;
+}
+
+.close{
+    position: absolute;
+    top: 20px;
+    right: 40px;
+    font-size: 3vw;
+    color: var(--primary-color);
+    cursor: pointer;
 }
 
 .return {
