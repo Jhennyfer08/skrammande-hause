@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description"
         content="Explore a Skrämmande Häuse, um museu virtual de pinturas clássicas onde obras centenárias ganham vida em uma experiência imersiva inspirada na Era Vitoriana.">
+    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/4.0.0/uicons-brands/css/uicons-brands.css'>
     <link rel="shortcut icon" href="../ico/pallete.ico" type="image/x-icon">
     <link rel="stylesheet" href="../css/home.css">
     <script src="../js/home.js"></script>
@@ -13,9 +14,10 @@
 </head>
 
 <body class="body" onload="init()">
+
     <header class="header" id="home">
         <div class="logo-container">
-            <img src="../ico/brasao.png" alt="Brasão Skrämmande Hause" onclick="openLightbox(this)">
+            <img src="../ico/brasao.png" alt="Brasão Skrämmande Hause">
         </div>
 
         <div class="header-content">
@@ -49,7 +51,9 @@
         </section>
 
         <section class="highlights" id="highlights">
-            <p class="gradient-text">Obras em Destaque</p>
+            <a href="#home">
+                <p class="gradient-text">Obras em Destaque</p>
+            </a>
 
             <div class="carousel">
                 <button type="button" class="button carousel-btn" onclick="previousImage()">❮</button>
@@ -68,8 +72,9 @@
 
 
         <section class="gallery" id="gallery">
-            <p class="gradient-text">Galeria</p>
-
+            <a href="#home">
+                <p class="gradient-text">Galeria</p>
+            </a>
             <section class="pictures-container">
                 <div class="column">
                     <img src="../img/pinturas/witcher-peace.png" alt="couple" class="picture"
@@ -116,14 +121,19 @@
         </section>
     </main>
 
+    <div class="exemplo"></div>
+
     <footer class="footer">
 
         <section class="address" id="address">
-            <p class="gradient-text">Localização</p>
+            <a href="#home">
+                <p class="gradient-text">Localização</p>
+            </a>
+
 
             <iframe
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3750.6791200828175!2d-44.03880772386335!3d-19.937922338557026!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xa695ea5dd82e1d%3A0xca75cdd5bbcad1d6!2sSenac%20em%20Contagem!5e0!3m2!1spt-BR!2sbr!4v1783633542459!5m2!1spt-BR!2sbr"
-                allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+                allowfullscreen="" referrerpolicy="strict-origin-when-cross-origin"></iframe>
         </section>
 
 
@@ -147,10 +157,10 @@
 
             <div class="social">
                 <ul>
-                    <a href="">Instagram</a>
-                    <a href="">Whatsapp</a>
-                    <a href="">Facebook</a>
-                    <a href="">Twitter</a>
+                    <a href=""><i class="fi fi-brands-instagram-circle"></i></a>
+                    <a href="https://wa.me/5531973272251?text=Boa%20tarde"><i class="fi fi-brands-whatsapp-circle"></i></a>
+                    <a href=""><i class="fi fi-brands-facebook"></i></a>
+                    <a href=""><i class="fi fi-brands-twitter"></i></a>
                 </ul>
             </div>
 

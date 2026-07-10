@@ -9,9 +9,12 @@ visão daqueles que já partiram.
 
 ### Checklist
 
-- Lightbox nas imagens
 - Hover com scale nas imagens
-- Funcionalidade da galeria 
 - Funcionalidade de footer
     - Informações de contato
 - Responsividade
+
+
+Orientação a objetos na linguagem de programação back-end: classes, objetos, interfaces,
+atributos, tipos de dados, modificadores de acesso, métodos e propriedades, encapsulamento e
+agregação; conceitos de herança, polimorfismo, tratamento de erros e exceções.
