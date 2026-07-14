@@ -190,6 +190,9 @@ footer a{
     -webkit-mask:
         linear-gradient(#fff 0 0) content-box,
         linear-gradient(#fff 0 0);
+    mask:
+        linear-gradient(#fff 0 0) content-box,
+        linear-gradient(#fff 0 0);
 
     -webkit-mask-composite: xor;
     mask-composite: exclude;
@@ -304,7 +307,7 @@ footer a{
 
 .info p,
 .info a {
-    filter: drop-shadow(1px 1px #fff);
+    filter: drop-shadow(1px .8px #fff);
     color: var(--background-color);
     text-decoration: none;
 }
