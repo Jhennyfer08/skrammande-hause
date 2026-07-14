@@ -1,15 +1,16 @@
 import express from "express";
 import multer from "multer";
-// import fs from "fs";
+import fs from "fs";
+import { error } from "console";
 
 const PORT = 3000;
 const app = express();
 
 const uploadPath = 'tmp';
 
-// if (!fs.existsSync(uploadPath)) {
-//     fs.mkdirSync(uploadPath, {recursive: true});
-// }
+if (!fs.existsSync(uploadPath)) {
+    fs.mkdirSync(uploadPath, {recursive: true});
+}
 
 const storage = multer.diskStorage({
     destination: (req, file, cb) => {
@@ -48,6 +49,26 @@ app.post("/upload", upload.single("image"), (req, res) => {
             url: `${uri}/${req.file.filename}`,
         });
     }
+});
+
+app.get('/upload', (req, res) =>{
+    fs.readdir(uploadPath, (error, files) =>{
+        if (error) {
+            return res.status(500).json({
+                success: false,
+                message: 'Erro ao listar imagens.'
+            });
+        }
+
+        const images = files
+            .filter(file => !file.startsWith('.')) //elimina arquivos ocultos
+            .sort((a,b) => b.localeCompare(a)); //ordena desc 
+
+        res.status(200).json({
+            success: true,
+            images
+        });
+    });
 });
 
 app.listen(PORT, () => {
