@@ -6,10 +6,10 @@ import { error } from "console";
 const PORT = 3000;
 const app = express();
 
-const uploadPath = 'tmp';
+const uploadPath = "tmp";
 
 if (!fs.existsSync(uploadPath)) {
-    fs.mkdirSync(uploadPath, {recursive: true});
+    fs.mkdirSync(uploadPath, { recursive: true });
 }
 
 const storage = multer.diskStorage({
@@ -18,7 +18,7 @@ const storage = multer.diskStorage({
     },
     filename: (req, file, cb) => {
         const date = new Date().toISOString().replace(/\D/g, "");
-        const ext = file.originalname.split('.').pop();
+        const ext = file.originalname.split(".").pop();
 
         cb(null, `${date}.${ext}`);
     },
@@ -51,22 +51,24 @@ app.post("/upload", upload.single("image"), (req, res) => {
     }
 });
 
-app.get('/upload', (req, res) =>{
-    fs.readdir(uploadPath, (error, files) =>{
+app.get("/upload", (req, res) => {
+    fs.readdir(uploadPath, (error, files) => {
         if (error) {
             return res.status(500).json({
                 success: false,
-                message: 'Erro ao listar imagens.'
+                message: "Erro ao listar imagens.",
             });
         }
 
         const images = files
-            .filter(file => !file.startsWith('.')) //elimina arquivos ocultos
-            .sort((a,b) => b.localeCompare(a)); //ordena desc 
+            .filter((file) => !file.startsWith(".")) //elimina arquivos ocultos
+            .sort((a, b) => b.localeCompare(a)); //ordena desc
+
+        const uri = `${req.protocol}://${req.get("host")}`;
 
         res.status(200).json({
             success: true,
-            images
+            images: images.map((image) => `${uri}/${image}`),
         });
     });
 });
