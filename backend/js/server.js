@@ -5,13 +5,15 @@ import multer from "multer";
 const PORT = 3000;
 const app = express();
 
-// if (!fs.existsSync("tmp")) {
-//     fs.mkdirSync("tmp");
+const uploadPath = '/app/tmp';
+
+// if (!fs.existsSync(uploadPath)) {
+//     fs.mkdirSync(uploadPath, {recursive: true});
 // }
 
 const storage = multer.diskStorage({
     destination: (req, file, cb) => {
-        cb(null, "tmp");
+        cb(null, uploadPath);
     },
     filename: (req, file, cb) => {
         const date = new Date().toISOString().replace(/\D/g, "");
@@ -23,7 +25,7 @@ const storage = multer.diskStorage({
 
 const upload = multer({ storage });
 
-app.use(express.static("tmp"));
+app.use(express.static(uploadPath));
 
 app.get("/test", (req, res) => {
     return res.status(200).json({
@@ -41,7 +43,7 @@ app.post("/upload", upload.single("image"), (req, res) => {
         res.status(201).json({
             success: true,
             message: "Imagem enviada com sucesso.",
-            file: req.file.filename.dateNum,
+            file: req.file.filename,
             url: `http://localhost:${PORT}/${req.file.filename}`,
         });
     }
