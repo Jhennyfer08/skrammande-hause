@@ -5,7 +5,7 @@ import multer from "multer";
 const PORT = 3000;
 const app = express();
 
-const uploadPath = 'app/tmp';
+const uploadPath = 'tmp';
 
 // if (!fs.existsSync(uploadPath)) {
 //     fs.mkdirSync(uploadPath, {recursive: true});
@@ -40,11 +40,12 @@ app.post("/upload", upload.single("image"), (req, res) => {
             message: "Arquivo não enviado.",
         });
     } else {
+        const uri = `${req.protocol}://${req.get("host")}`;
         res.status(201).json({
             success: true,
             message: "Imagem enviada com sucesso.",
             file: req.file.filename,
-            url: `http://localhost:${PORT}/${req.file.filename}`,
+            url: `${uri}/${req.file.filename}`,
         });
     }
 });
