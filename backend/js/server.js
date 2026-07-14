@@ -5,7 +5,7 @@ import multer from "multer";
 const PORT = 3000;
 const app = express();
 
-const uploadPath = '/app/tmp';
+const uploadPath = 'app/tmp';
 
 // if (!fs.existsSync(uploadPath)) {
 //     fs.mkdirSync(uploadPath, {recursive: true});
