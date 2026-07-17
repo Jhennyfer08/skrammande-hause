@@ -58,6 +58,5 @@ function closeLightbox() {
 
 function init() {
     showImage(0);
-
     setInterval(nextImage, 4000);
 }

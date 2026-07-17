@@ -1,0 +1,81 @@
+@import url('https://fonts.googleapis.com/css2?family=Forum&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Cormorant+Garamond:wght@300;400;500;600&display=swap');
+
+.main p {
+    text-align: center;
+}
+
+.upload {
+    margin-bottom: 3vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.dropzone {
+    width: 70vw;
+    margin: 2vw;
+    padding: 3vw 2vw;
+    text-align: center;
+
+    border: .7vw solid transparent;
+    border-image: var(--text-color) 1;
+    clip-path: inset(0 round 10px);
+    cursor: pointer;
+    transition: .25s;
+}
+
+.dropzone.drag {
+    transform: scale(1.05);
+}
+
+.dropzone .upload-message {
+    display: flex;
+    flex-direction: column;
+    gap: 3vw;
+    margin-bottom: 3vw;
+}
+
+.dropzone .fi-rr-upload {
+    font-size: 5vw;
+}
+
+.dropzone .preview {
+    width: 20vw;
+    max-width: 100%;
+    object-fit: cover;
+
+    margin: 2vw;
+
+    border-radius: 8px;
+    border: .3vw solid transparent;
+    border-image: var(--text-color) 1;
+    clip-path: inset(0 round 10px);
+}
+
+.send-btn {
+    display: inline-block;
+    padding: 1vw;
+    font-family: 'Forum';
+    font-size: 2vw;
+    font-weight: 600;
+    cursor: pointer;
+    background: var(--text-color);
+    color: var(--background-color);
+
+    border-radius: 8px;
+    border: .3vw solid transparent;
+    border-image: var(--text-color) 1;
+    clip-path: inset(0 round 10px);
+
+    &:hover {
+        background: var(--text-color);
+        background-clip: text;
+        color: transparent;
+    }
+
+    &:disabled {
+        opacity: .5;
+    }
+}

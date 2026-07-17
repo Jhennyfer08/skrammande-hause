@@ -14,9 +14,5 @@ visão daqueles que já partiram.
     - Informações de contato
 - Responsividade
 - Instalar e criar coleções com o POSTMAN
-- Criar uma function que pega todos os arquivos na pasta tmp e traz uma lista em ordem alfabética os últimos adicionados aparecem primeiro na lista
-
-
-Orientação a objetos na linguagem de programação back-end: classes, objetos, interfaces,
-atributos, tipos de dados, modificadores de acesso, métodos e propriedades, encapsulamento e
-agregação; conceitos de herança, polimorfismo, tratamento de erros e exceções.
+- Pesquisar CSS Nesting
+- Load das imagens + estrutura de columns

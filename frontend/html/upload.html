@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Explore a Skrämmande Häuse, um museu virtual de pinturas clássicas onde obras centenárias ganham vida em uma experiência imersiva inspirada na Era Vitoriana.">
+    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/4.0.0/uicons-brands/css/uicons-brands.css'>
+    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/4.0.0/uicons-regular-rounded/css/uicons-regular-rounded.css'>
+    <link rel="shortcut icon" href="../ico/pallete.ico" type="image/x-icon">
+    <link rel="stylesheet" href="../css/home.css">
+    <link rel="stylesheet" href="../css/upload.css">
+    <script src="../js/upload.js"></script>
+    <title>Skrämmande Häuse</title>
+</head>
+
+<body class="body">
+
+    <header class="header">
+        <div class="logo-container">
+            <img src="../ico/brasao.png" alt="Brasão Skrämmande Hause">
+        </div>
+
+        <div class="header-content">
+            <p class="gradient-text title">Skrämmande Häuse</p>
+            <p class="gradient-text">
+                𓂃🖌 Galeria de Arte Clássica
+            </p>
+        </div>
+
+        <nav class="nav">
+            <ul class="gradient-text">
+                <li><a href="home.html#home">Ínicio</a></li>
+                <li><a href="home.html#highlights">Destaques</a></li>
+                <li><a href="home.html#gallery">Galeria</a></li>
+                <li><a href="#info">Sobre</a></li>
+                <li><a href="#upload">Postar</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="main">
+        <section class="upload" id="upload">
+            <p class="title gradient-text">Enviar</p>
+
+            <div class="dropzone gradient-text" id="dropzone" ondragover="dragOver(event)" ondragleave="dragLeave()"
+                ondrop="dropFile(event)" onclick="selectFile()">
+
+                <div class="upload-message" id="uploadMessage">
+                    <p>Arraste uma imagem</p>
+                    <i class="fi fi-rr-upload"></i>
+                </div>
+
+                <img src="" alt="preview da imagem" id="preview" class="preview" hidden>
+                <p id="status" class="status"></p>
+
+                <input type="file" id="file" accept="image/*" hidden onchange="showFileName()"> 
+                <span id="fileName" class="file-name">Ou clique para selecionar</span>
+            </div>
+            
+            <button type="button" id="sendBtn" class="send-btn" onclick="uploadImage()" disabled>Enviar imagem</button>
+        </section>
+    </main>
+
+    <footer class="footer">
+
+        <section class="info" id="info">
+            <p class="title">Skrämmande Häuse</p>
+
+            <div class="contacts">
+                <ul>
+                    <li>Endereço: Rua Paineiras, 1300 - Eldorado, Contagem MG 32310-400</li>
+                    <li>Telefone: 0800 724 4440 ou (31) 3048-9800</li>
+                    <li>Email: centralcontagem@mg.senac.br</li>
+                    <li>Horário: Terça a Domingo - 8h às 22h</li>
+                </ul>
+            </div>
+
+            <div class="social">
+                <ul>
+                    <a href=""><i class="fi fi-brands-instagram-circle"></i></a>
+                    <a href="https://wa.me/5531973272251?text=Boa%20tarde"><i
+                            class="fi fi-brands-whatsapp-circle"></i></a>
+                    <a href=""><i class="fi fi-brands-facebook"></i></a>
+                    <a href=""><i class="fi fi-brands-twitter"></i></a>
+                </ul>
+            </div>
+
+            <span></span>
+
+            <p class="copyright"> &copy; 2026 Skrämmande Häuse. Todos os direitos reservados.</p>
+
+        </section>
+    </footer>
+</body>
+
+</html>
