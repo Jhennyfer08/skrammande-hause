@@ -1,10 +1,12 @@
 import express from "express";
 import multer from "multer";
+import cors from "cors";
 import fs from "fs";
 import { error } from "console";
 
 const PORT = 3000;
 const app = express();
+app.use(cors());
 
 const uploadPath = "tmp";
 
