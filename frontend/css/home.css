@@ -212,7 +212,7 @@ footer a {
     flex-direction: column;
 }
 
-.gallery .pictures-container {
+.gallery .columns{
     display: flex;
     justify-content: space-between;
 }
