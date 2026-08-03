@@ -27,7 +27,7 @@ async function uploadImage(event) {
     formData.append("image", input.files[0]);
 
     try {
-        const response = await fetch(getURL() || `http://localhost:3000/upload`, {
+        const response = await fetch(`${getURL()}/upload` || `http://localhost:3000/upload`, {
             method: "POST",
             body: formData,
         });

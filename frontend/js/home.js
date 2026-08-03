@@ -68,7 +68,7 @@ async function createGallery() {
 
     try {
         const response = await fetch(
-            getURL() || `http://localhost:3000/upload`,
+            `${getURL()}/upload` || `http://localhost:3000/upload`,
             {
                 method: "GET",
                 headers: {
