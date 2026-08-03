@@ -63,7 +63,7 @@ async function createGallery() {
     const container = document.getElementById("columns");
 
     try {
-        const response = await fetch(`http://localhost:3000/upload`, {
+        const response = await fetch(process.env.URL || `http://localhost:3000/upload`, {
             method: "GET",
             headers: {
                 "Content-Type": "application/json",

@@ -4,7 +4,6 @@ function selectFile() {
 
 function hideMessage() {
     document.getElementById("uploadMessage").style.display = "none";
-    // document.getElementById("uploadBtn").style.display = "none";
 }
 
 function resetUpload(status, message) {
@@ -24,7 +23,7 @@ async function uploadImage(event) {
     formData.append("image", input.files[0]);
 
     try {
-        const response = await fetch("http://localhost:3000/upload", {
+        const response = await fetch(process.env.URL || `http://localhost:3000/upload`, {
             method: "POST",
             body: formData,
         });

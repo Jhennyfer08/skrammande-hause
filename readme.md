@@ -8,11 +8,7 @@ Aprecie sua jornada enquanto percorre cada ambiente e descubra o mundo pela
 visão daqueles que já partiram.
 
 ### Checklist
-
-- Hover com scale nas imagens
-- Funcionalidade de footer
-    - Informações de contato
-- Responsividade
+- Autenticação
 - Instalar e criar coleções com o POSTMAN
-- Pesquisar CSS Nesting
-- Load das imagens + estrutura de columns
+- Documentação
+- Classificação das galerias
