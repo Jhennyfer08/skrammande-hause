@@ -18,6 +18,7 @@ async function uploadImage(event) {
     const input = document.getElementById("file");
     const status = document.getElementById("status");
 
+    
     if (input.files.length === 0) {
         alert("Selecione uma imagem");
         return;
