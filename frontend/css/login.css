@@ -1,0 +1,72 @@
+.login,
+.register {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 6vw 0;
+}
+
+.form {
+    width: 35%;
+    height: auto;
+    padding: 3rem;
+    border: .7rem solid transparent;
+    border-image: var(--text-color) 1;
+    clip-path: inset(0 round 10px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2.5rem;
+
+    p {
+        font-size: 3.5rem;
+        font-weight: bold;
+        font-family: 'Forum';
+        margin: 0;
+    }
+
+    .group-form {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: .5rem;
+
+        input {
+            padding: .6rem;
+            outline: none;
+            border: none;
+            border-radius: 8px;
+        }
+        
+    }
+
+    button {
+        width: 100%;
+        padding: .5rem;
+        font-family: 'Forum';
+        font-size: 2rem;
+        font-weight: 600;
+        cursor: pointer;
+        color: var(--background-color);
+        border-radius: 8px;
+        background: var(--text-color);
+        border: .3vw solid transparent;
+        border-image: var(--text-color) 1;
+        clip-path: inset(0 round 10px);
+
+        &:hover {
+            background: var(--text-color);
+            background-clip: text;
+            color: transparent;
+        }
+    }
+}
+
+.hidden{
+    display: none;
+}

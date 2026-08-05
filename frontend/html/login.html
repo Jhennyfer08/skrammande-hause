@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Explore a Skrämmande Häuse, um museu virtual de pinturas clássicas onde obras centenárias ganham vida em uma experiência imersiva inspirada na Era Vitoriana.">
+    <link rel="shortcut icon" href="../ico/pallete.ico" type="image/x-icon">
+    <link rel="stylesheet" href="../css/home.css">
+    <link rel="stylesheet" href="../css/login.css">
+    <script src="../js/login.js"></script>
+    <title>Skrämmande Häuse</title>
+</head>
+
+<body class="body">
+
+    <header class="header" id="home">
+
+        <div class="header-content">
+            <p class="gradient-text title">Skrämmande Häuse</p>
+        </div>
+
+    </header>
+
+    <main class="main">
+        <section class="login" id="login">
+            
+            <form class="form" id="form" onsubmit="login()">
+                <p class="gradient-text">Login</p>
+
+                <div class="group-form">
+                    <label for="email" class="gradient-text">Email:</label>
+                    <input type="email" id="email" placeholder="exemplo@gmail.com">
+                </div>
+
+                <div class="group-form">
+                    <label for="password" class="gradient-text">Senha:</label>
+                    <input type="password" id="password">
+                </div>
+
+                <button type="submit" id="submitBtn">Entrar</button>
+            </form>
+        </section>
+
+        <section class="register hidden" id="register">
+            <form class="form" id="form" onsubmit="register()">
+                <p class="gradient-text">Cadastrar</p>
+
+                <div class="group-form">
+                    <label for="email" class="gradient-text">Email:</label>
+                    <input type="email" id="email" placeholder="exemplo@gmail.com">
+                </div>
+
+                <div class="group-form">
+                    <label for="password" class="gradient-text">Senha:</label>
+                    <input type="password" id="password">
+                </div>
+
+                <div class="group-form">
+                    <label for="confirmPassword" class="gradient-text">Confirmar senha:</label>
+                    <input type="password" id="confirmPassword">
+                </div>
+
+                <button type="submit">Cadastrar</button>
+            </form>
+        </section>
+
+    </main>
+
+    <footer class="footer">
+
+        <section class="info" id="info">
+            <p class="title">Skrämmande Häuse</p>
+
+            <div class="contacts">
+                <ul>
+                    <li>Endereço: Rua Paineiras, 1300 - Eldorado, Contagem MG 32310-400</li>
+                    <li>Telefone: 0800 724 4440 ou (31) 3048-9800</li>
+                    <li>Email: centralcontagem@mg.senac.br</li>
+                    <li>Horário: Terça a Domingo - 8h às 22h</li>
+                </ul>
+            </div>
+
+            <span></span>
+
+            <p class="copyright"> &copy; 2026 Skrämmande Häuse. Todos os direitos reservados.</p>
+
+        </section>
+
+    </footer>
+</body>
+
+</html>
