@@ -1,7 +1,3 @@
-function getURL() {
-    return `https://skrammande-hause-back-jhennyfer.up.railway.app`;
-}
-
 function selectFile() {
     document.getElementById("file").click();
 }
@@ -28,7 +24,7 @@ async function uploadImage(event) {
     formData.append("image", input.files[0]);
 
     try {
-        const response = await fetch(`${getURL()}/upload` || `http://localhost:3000/upload`, {
+        const response = await fetch(`http://localhost:3000/upload`, {
             method: "POST",
             body: formData,
         });

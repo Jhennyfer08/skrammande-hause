@@ -4,4 +4,4 @@ INSERT INTO users(
 ) VALUES (
     ?,
     ?
-);
+)

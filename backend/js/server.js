@@ -3,7 +3,7 @@ import cors from "cors";
 import fs from "fs";
 
 import upload from "./routes/upload.js"
-import auth from "./routes/auth.js"
+import login from "./routes/login.js"
 
 const PORT = 3000;
 const app = express();
@@ -20,7 +20,7 @@ if (!fs.existsSync(uploadPath)) {
 app.use(express.static(uploadPath));
 
 app.use('/upload', upload);
-app.use('/auth', auth);
+app.use('/login', login);
 
 app.get("/test", (req, res) => {
     return res.status(200).json({

@@ -1,3 +1,5 @@
+DROP DATABASE IF EXISTS gallery;
+
 CREATE DATABASE IF NOT EXISTS gallery;
 USE gallery;
 

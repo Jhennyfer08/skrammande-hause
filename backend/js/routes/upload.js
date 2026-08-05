@@ -1,10 +1,12 @@
+import { authenticateToken } from "../auth.js";
 import { Router } from "express";
+import jwt from "jsonwebtoken";
 import multer from "multer";
 import fs from "fs";
 
+
 const router = Router();
 const uploadPath = "tmp";
-
 
 const storage = multer.diskStorage({
     destination: (req, file, cb) => {
@@ -42,7 +44,7 @@ router.get("/", (req, res) => {
     });
 });
 
-router.post("/", upload.single("image"), (req, res) => {
+router.post("/", authenticateToken, upload.single("image"), (req, res) => {
     if (!req.file) {
         return res.status(400).json({
             success: false,

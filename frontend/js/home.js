@@ -1,7 +1,3 @@
-function getURL() {
-    return `https://skrammande-hause-back-jhennyfer.up.railway.app`;
-}
-
 function showImage(current) {
     const slides = document.querySelectorAll(".slide");
 
@@ -67,8 +63,7 @@ async function createGallery() {
     const container = document.getElementById("columns");
 
     try {
-        const response = await fetch(
-            `${getURL()}/upload` || `http://localhost:3000/upload`,
+        const response = await fetch(`http://localhost:3000/upload`,
             {
                 method: "GET",
                 headers: {
