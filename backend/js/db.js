@@ -1,3 +1,4 @@
+import { readFile } from "fs/promises";
 import mysql2 from "mysql2/promise";
 
 async function connect() {
@@ -23,4 +24,9 @@ export async function executeQuery(query, params = []) {
     } finally{
         await connection.end();
     }
+}
+
+export async function executeQueryFile(filePath, params = []) {
+    const query = await readFile(filePath, "utf-8");
+    return await executeQuery(query, params);
 }

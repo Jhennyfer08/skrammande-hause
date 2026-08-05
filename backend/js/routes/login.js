@@ -1,6 +1,5 @@
 import { generateToken } from "../auth.js";
-import { executeQuery } from "../db.js";
-import { readFile } from "fs/promises";
+import { executeQuery, executeQueryFile } from "../db.js";
 import { Router } from "express";
 import jwt from "jsonwebtoken";
 import bcrypt from "bcrypt";
@@ -19,9 +18,8 @@ router.post("/register", async (req, res) => {
     }
 
     try {
-        let query = await readFile("./sql/selectUser.sql", "utf-8");
         let param = [email];
-        const [user] = await executeQuery(query, param);
+        const [user] = await executeQueryFile("./sql/selectUser.sql", param);
 
         if (user.length > 0) {
             return res.status(409).json({
@@ -32,9 +30,8 @@ router.post("/register", async (req, res) => {
 
         const hash = await bcrypt.hash(password, 10);
 
-        query = await readFile("./sql/insertUser.sql", "utf-8");
         param = [email, hash];
-        const result = await executeQuery(query, param);
+        const result = await executeQueryFile("./sql/insertUser.sql", param);
         const id = result[0].insertId;
 
         const token = generateToken(email);
@@ -42,7 +39,7 @@ router.post("/register", async (req, res) => {
         return res.status(201).json({
             success: true,
             message: `Usuário cadastrado.`,
-            tokne: token,
+            token: token,
         });
     } catch (error) {
         return res.status(500).json({
@@ -56,9 +53,8 @@ router.post("/", async (req, res) => {
     const email = req.body.email;
     const password = req.body.password;
 
-    let query = await readFile("./sql/selectUser.sql", "utf-8");
     let param = [email];
-    const [user] = await executeQuery(query, param);
+    const [user] = await executeQueryFile("./sql/selectUser.sql", param);
 
     try {
         const encryptPass = user[0].password;
