@@ -7,13 +7,21 @@
     <meta name="description"
         content="Explore a Skrämmande Häuse, um museu virtual de pinturas clássicas onde obras centenárias ganham vida em uma experiência imersiva inspirada na Era Vitoriana.">
     <link rel="shortcut icon" href="../ico/pallete.ico" type="image/x-icon">
+    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/4.0.0/uicons-solid-rounded/css/uicons-solid-rounded.css'>
     <link rel="stylesheet" href="../css/home.css">
     <link rel="stylesheet" href="../css/login.css">
+    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/4.0.0/uicons-bold-rounded/css/uicons-bold-rounded.css'>
     <script src="../js/login.js"></script>
     <title>Skrämmande Häuse</title>
 </head>
 
 <body class="body">
+
+    <div class="profile" id="profile">
+        <div class="return-home" id="returnHome" onclick="location.href = './home.html'">
+            <i class="fi fi-br-arrow-left gradient-text"></i>
+        </div>
+    </div>
 
     <header class="header" id="home">
 
@@ -25,18 +33,18 @@
 
     <main class="main">
         <section class="login" id="login">
-            
-            <form class="form" id="form" onsubmit="login()">
+
+            <form class="form" id="form" onsubmit="login(event)">
                 <p class="gradient-text">Login</p>
 
                 <div class="group-form">
-                    <label for="email" class="gradient-text">Email:</label>
-                    <input type="email" id="email" placeholder="exemplo@gmail.com">
+                    <input type="email" id="emailLogin" placeholder="exemplo@gmail.com">
+                    <label for="emailLogin" class="gradient-text">Email:</label>
                 </div>
 
                 <div class="group-form">
-                    <label for="password" class="gradient-text">Senha:</label>
-                    <input type="password" id="password">
+                    <label for="passwordLogin" class="gradient-text">Senha:</label>
+                    <input type="password" id="passwordLogin">
                 </div>
 
                 <button type="submit" id="submitBtn">Entrar</button>
@@ -44,22 +52,22 @@
         </section>
 
         <section class="register hidden" id="register">
-            <form class="form" id="form" onsubmit="register()">
+            <form class="form" id="form" onsubmit="register(event)">
                 <p class="gradient-text">Cadastrar</p>
 
                 <div class="group-form">
-                    <label for="email" class="gradient-text">Email:</label>
-                    <input type="email" id="email" placeholder="exemplo@gmail.com">
+                    <label for="emailRegister" class="gradient-text">Email:</label>
+                    <input type="email" id="emailRegister" placeholder="exemplo@gmail.com">
                 </div>
 
                 <div class="group-form">
-                    <label for="password" class="gradient-text">Senha:</label>
-                    <input type="password" id="password">
+                    <label for="passwordRegister" class="gradient-text">Senha:</label>
+                    <input type="password" id="passwordRegister">
                 </div>
 
                 <div class="group-form">
-                    <label for="confirmPassword" class="gradient-text">Confirmar senha:</label>
-                    <input type="password" id="confirmPassword">
+                    <label for="confirmPasswordRegister" class="gradient-text">Confirmar senha:</label>
+                    <input type="password" id="confirmPasswordRegister">
                 </div>
 
                 <button type="submit">Cadastrar</button>

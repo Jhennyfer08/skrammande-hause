@@ -7,7 +7,7 @@ async function connect() {
         port: Number(process.env.DB_PORT),
         user: process.env.DB_USER,
         password: process.env.DB_PASSWORD,
-        database: process.env.DB_NAME
+        database: process.env.DB_NAME,
     });
 
     return connection;
@@ -21,7 +21,7 @@ export async function executeQuery(query, params = []) {
         return result;
     } catch (error) {
         console.error(`Identified error on executeQuery: ${error}`);
-    } finally{
+    } finally {
         await connection.end();
     }
 }

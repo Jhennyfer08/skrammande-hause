@@ -7,6 +7,8 @@
     <meta name="description"
         content="Explore a Skrämmande Häuse, um museu virtual de pinturas clássicas onde obras centenárias ganham vida em uma experiência imersiva inspirada na Era Vitoriana.">
     <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/4.0.0/uicons-brands/css/uicons-brands.css'>
+    <link rel='stylesheet'
+        href='https://cdn-uicons.flaticon.com/4.0.0/uicons-solid-rounded/css/uicons-solid-rounded.css'>
     <link rel="shortcut icon" href="../ico/pallete.ico" type="image/x-icon">
     <link rel="stylesheet" href="../css/home.css">
     <script src="../js/home.js"></script>
@@ -14,6 +16,18 @@
 </head>
 
 <body class="body" onload="init()">
+
+    <div class="profile" id="profile">
+        <p class="logged-email gradient-text" id="loggedEmail"></p>
+
+        <div class="connected hidden" id="connected" onclick="disconnect()">
+            <i class="fi fi-sr-user"></i>
+        </div>
+
+        <div class="disconnected" id="disconnected" onclick="location.href = './login.html'">
+            <i class="fi fi-sr-user gradient-text"></i>
+        </div>
+    </div>
 
     <header class="header" id="home">
         <div class="logo-container">

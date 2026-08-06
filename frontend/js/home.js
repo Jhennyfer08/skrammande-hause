@@ -104,8 +104,30 @@ async function createGallery() {
     }
 }
 
+function checkLogin() {
+    const loggedUser = JSON.parse(localStorage.getItem('logged'));
+
+    try {
+        if (loggedUser) {
+            const connected = document.getElementById('connected');
+            const disconnected = document.getElementById('disconnected');
+
+            const loggedEmail = document.getElementById('loggedEmail');
+            
+            connected.classList.remove('hidden');
+            disconnected.classList.add('hidden');
+            
+            loggedEmail.textContent = loggedUser.email;
+        }
+
+    } catch (error) {
+        
+    }
+}
+
 async function init() {
     showImage(0);
     setInterval(nextImage, 4000);
     await createGallery();
+    checkLogin();
 }
