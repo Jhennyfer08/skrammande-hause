@@ -20,12 +20,17 @@ async function uploadImage(event) {
         return;
     }
 
+    const loggedUser = JSON.parse(localStorage.getItem('logged'));
+
     const formData = new FormData();
     formData.append("image", input.files[0]);
 
     try {
         const response = await fetch(`http://localhost:3000/upload`, {
             method: "POST",
+            headers: {
+                "Authorization": `Bearer ${loggedUser.token}`
+            },
             body: formData,
         });
 

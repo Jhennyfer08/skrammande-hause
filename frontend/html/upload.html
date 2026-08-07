@@ -7,15 +7,34 @@
     <meta name="description"
         content="Explore a Skrämmande Häuse, um museu virtual de pinturas clássicas onde obras centenárias ganham vida em uma experiência imersiva inspirada na Era Vitoriana.">
     <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/4.0.0/uicons-brands/css/uicons-brands.css'>
-    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/4.0.0/uicons-regular-rounded/css/uicons-regular-rounded.css'>
+    <link rel='stylesheet'
+        href='https://cdn-uicons.flaticon.com/4.0.0/uicons-regular-rounded/css/uicons-regular-rounded.css'>
+    <link rel='stylesheet'
+        href='https://cdn-uicons.flaticon.com/4.0.0/uicons-solid-rounded/css/uicons-solid-rounded.css'>
     <link rel="shortcut icon" href="../ico/pallete.ico" type="image/x-icon">
     <link rel="stylesheet" href="../css/home.css">
     <link rel="stylesheet" href="../css/upload.css">
     <script src="../js/upload.js"></script>
+    <script src="../js/home.js"></script>
     <title>Skrämmande Häuse</title>
 </head>
 
-<body class="body">
+<body class="body" onload="checkLogin()">
+
+    <div class="profile" id="profile">
+        <p class="logged-email gradient-text" id="loggedEmail"></p>
+
+        <div class="connected hidden" id="connected" onclick="showOptions()">
+            <i class="fi fi-sr-user"></i>
+        </div>
+
+        <div class="profile-options hidden" id="profileOptions" onclick="disconnect()">
+            <p class="gradient-text">Sair</p>
+        </div>
+        <div class="disconnected" id="disconnected" onclick="location.href = './login.html'">
+            <i class="fi fi-sr-user gradient-text"></i>
+        </div>
+    </div>
 
     <header class="header">
         <div class="logo-container">
@@ -55,10 +74,10 @@
                 <img src="" alt="preview da imagem" id="preview" class="preview" hidden>
                 <p id="status" class="status"></p>
 
-                <input type="file" id="file" accept="image/*" hidden onchange="showFileName()"> 
+                <input type="file" id="file" accept="image/*" hidden onchange="showFileName()">
                 <span id="fileName" class="file-name">Ou clique para selecionar</span>
             </div>
-            
+
             <button type="button" id="sendBtn" class="send-btn" onclick="uploadImage()" disabled>Enviar imagem</button>
         </section>
     </main>
