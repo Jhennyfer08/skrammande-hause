@@ -32,10 +32,16 @@
     </header>
 
     <main class="main">
+        <div class="slider-button gradient-text" id="sliderButton">
+            <div class="slider" id="slider"></div>
+
+            <p class="login-button active" id="loginButton" onclick="sliderLogin('login')">Logar</p>
+            <p class="register-button" id="registerButton" onclick="sliderLogin('register')">Cadastrar</p>
+        </div>
+
         <section class="login" id="login">
 
             <form class="form" id="form" onsubmit="login(event)">
-                <p class="gradient-text">Login</p>
 
                 <div class="group-form">
                     <label for="emailLogin" class="gradient-text">Email:</label>
@@ -53,7 +59,6 @@
 
         <section class="register hidden" id="register">
             <form class="form" id="form" onsubmit="register(event)">
-                <p class="gradient-text">Cadastrar</p>
 
                 <div class="group-form">
                     <label for="emailRegister" class="gradient-text">Email:</label>

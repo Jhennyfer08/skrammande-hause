@@ -1,3 +1,13 @@
+// function sliderLogin(form) {
+//     // const form = document.getElementById(form);
+//     const slider = document.getElementById(slider);
+
+//     if (form === 'register') {
+//         slider.style.transform = "translateX(100%)";
+//     }
+// }
+
+
 async function login(event) {
     event.preventDefault();
 
@@ -36,3 +46,4 @@ async function login(event) {
         console.error(`Identified error on login ${error}`);
     }
 }
+

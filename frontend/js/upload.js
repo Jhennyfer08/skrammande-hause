@@ -21,6 +21,7 @@ async function uploadImage(event) {
     }
 
     const loggedUser = JSON.parse(localStorage.getItem('logged'));
+    const token = loggedUser.token;
 
     const formData = new FormData();
     formData.append("image", input.files[0]);

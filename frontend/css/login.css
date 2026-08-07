@@ -1,3 +1,45 @@
+.body{
+    display: grid;
+    grid-auto-flow: auto 1fr auto;
+}
+
+.slider-button{
+    position: relative;
+    overflow: hidden;
+
+    width: 40%;
+    display: flex;
+    justify-self: center;
+    justify-content: space-evenly;
+    align-items: center;
+
+    margin-top: 3vw;
+    gap: 2vw;
+    padding: .7vw;
+    border: 6px solid transparent;
+    border-image: var(--text-color) 1;
+    clip-path: inset(0 round 10px);
+    z-index: 0;
+
+    p{
+        z-index: 1;
+    }
+    
+    .active{
+        color: var(--background-color);
+    }
+}
+
+.slider{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 50%;
+    height: 100%;
+    background: var(--text-color);
+    z-index: 0;
+}
+
 .login,
 .register {
     width: 100%;
@@ -6,13 +48,13 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin: 6vw 0;
+    margin: 1vw 0 4vw 0;
 }
 
 .form {
     width: 40%;
     height: auto;
-    padding: 3rem;
+    padding: 1.5rem;
     border: .5rem solid transparent;
     border-image: var(--text-color) 1;
     clip-path: inset(0 round 10px);
@@ -35,6 +77,10 @@
         flex-direction: column;
         justify-content: center;
         gap: .5rem;
+
+        label{
+            font-size: 2rem;
+        }
 
         input {
             padding: .6rem;
@@ -69,4 +115,16 @@
 
 .hidden{
     display: none;
+}
+
+@media (max-width:768px) {
+    .form{
+        width: 80%;
+    }
+}
+
+@media (max-width:500px) {
+    .form{
+        width: 100%;
+    }
 }
