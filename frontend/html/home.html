@@ -20,8 +20,12 @@
     <div class="profile" id="profile">
         <p class="logged-email gradient-text" id="loggedEmail"></p>
 
-        <div class="connected hidden" id="connected" onclick="disconnect()">
+        <div class="connected hidden" id="connected" onclick="showOptions()">
             <i class="fi fi-sr-user"></i>
+        </div>
+
+        <div class="profile-options hidden" id="profileOptions" onclick="disconnect()">
+            <p class="gradient-text">Sair</p>
         </div>
 
         <div class="disconnected" id="disconnected" onclick="location.href = './login.html'">

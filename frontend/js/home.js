@@ -125,6 +125,16 @@ function checkLogin() {
     }
 }
 
+function showOptions() {
+    const leaveButton = document.getElementById('profileOptions');
+    leaveButton.classList.toggle('hidden');
+}
+
+function disconnect() {
+    localStorage.removeItem('logged');
+    window.location.href = './login.html';
+}
+
 async function init() {
     showImage(0);
     setInterval(nextImage, 4000);
