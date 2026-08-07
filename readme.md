@@ -100,7 +100,7 @@ Armazena um arquivo *mimetype*: ***/image** na pasta **/tmp** e o insere na tabe
 
 ### Requisição
 ```http
-PUT http://localhost:3000/upload
+POST http://localhost:3000/upload
 ```
 ```json
 {

@@ -104,6 +104,7 @@
         font-weight: bold;
         border: 1px solid #ffffff4a;
         border-radius: 8px;
+        cursor: pointer;
     }
 
     .return-home {
