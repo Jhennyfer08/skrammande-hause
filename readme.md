@@ -120,7 +120,8 @@ eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJpZCI6InRlc3RlQGdtYWlsLmNvbSIsImlhdCI6MTc
 ```json
 {
     "success":true,
-    "message":"Imagem enviada com sucesso.","file":"20260807001601719.png",
+    "message":"Imagem enviada com sucesso.",
+    "file":"20260807001601719.png",
     "url":"http://localhost:3000/20260807001601719.png"
 }
 ```

@@ -63,14 +63,12 @@ async function createGallery() {
     const container = document.getElementById("columns");
 
     try {
-        const response = await fetch(`http://localhost:3000/upload`,
-            {
-                method: "GET",
-                headers: {
-                    "Content-Type": "application/json",
-                },
+        const response = await fetch(`http://localhost:3000/upload`, {
+            method: "GET",
+            headers: {
+                "Content-Type": "application/json",
             },
-        );
+        });
 
         let images = (await response.json()).images;
 
@@ -105,34 +103,36 @@ async function createGallery() {
 }
 
 function checkLogin() {
-    const loggedUser = JSON.parse(localStorage.getItem('logged'));
+    const loggedUser = JSON.parse(localStorage.getItem("logged"));
 
     try {
         if (loggedUser) {
-            const connected = document.getElementById('connected');
-            const disconnected = document.getElementById('disconnected');
+            const connected = document.getElementById("connected");
+            const disconnected = document.getElementById("disconnected");
 
-            const loggedEmail = document.getElementById('loggedEmail');
-            
-            connected.classList.remove('hidden');
-            disconnected.classList.add('hidden');
-            
+            const loggedEmail = document.getElementById("loggedEmail");
+
+            connected.classList.remove("hidden");
+            disconnected.classList.add("hidden");
+
             loggedEmail.textContent = loggedUser.email;
         }
-
-    } catch (error) {
-        
-    }
+    } catch (error) {}
 }
 
 function showOptions() {
-    const leaveButton = document.getElementById('profileOptions');
-    leaveButton.classList.toggle('hidden');
+    const leaveButton = document.getElementById("profileOptions");
+    leaveButton.classList.toggle("hidden");
 }
 
 function disconnect() {
-    localStorage.removeItem('logged');
-    window.location.href = './login.html';
+    if (confirm("Gostaria de deslogar?")) {
+        const loggedEmail = document.getElementById("loggedEmail");
+        loggedEmail.textContent = null;
+
+        localStorage.removeItem("logged");
+        window.location.href = './home.html';
+    }
 }
 
 async function init() {
