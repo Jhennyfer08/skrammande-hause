@@ -14,14 +14,16 @@
     align-items: center;
 
     margin-top: 3vw;
-    gap: 2vw;
-    padding: .7vw;
     border: 6px solid transparent;
     border-image: var(--text-color) 1;
     clip-path: inset(0 round 10px);
     z-index: 0;
 
     p{
+        width: 100%;
+        height: 100%;
+        margin: .7vw;
+        text-align: center;
         z-index: 1;
     }
     
