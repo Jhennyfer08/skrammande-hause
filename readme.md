@@ -208,17 +208,6 @@ Content-type: application/json
 
 ---
 
-### Checklist
-- Instalar e criar coleções com o POSTMAN APP
-- Documentação
-- Classificação das galeria
-  
-- Consumir as rotas do backend e adicionar token ao localstorage
-- Modificar upload para verificar token do localstorage
-- Criar slider para o login/cadastro
-- Reescrever as interações com tabelas em orientação a objetos.
-
-
 ### Projeto teste
 
 - Assim que chegar o projeto teste, lê-lo todo imediatamente
