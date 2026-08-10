@@ -207,9 +207,3 @@ Content-type: application/json
 | id_user | integer | FK do Usuário |
 
 ---
-
-### Projeto teste
-
-- Assim que chegar o projeto teste, lê-lo todo imediatamente
-- Traçar estratégias de execução
-- Elaborar perguntas e marcar reunião remota com o Hiago 
