@@ -224,3 +224,9 @@ Content-type: application/json
 - Assim que chegar o projeto teste, lê-lo todo imediatamente
 - Traçar estratégias de execução
 - Elaborar perguntas e marcar reunião remota com o Hiago 
+
+
+https://aarav-sharma-liart.vercel.app/
+https://awrs.me/en
+https://majd-portfolio.framer.website/
+https://yashahire.info/
