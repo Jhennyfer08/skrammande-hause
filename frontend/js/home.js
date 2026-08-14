@@ -47,13 +47,18 @@ function previousImage() {
 function openLightbox(element) {
     let lightbox = document.getElementById("lightbox");
     let lightboxImg = document.getElementById("lightboxImg");
+    let nav = document.getElementById("nav");
 
+    nav.style.display = "none";
     lightboxImg.src = element.src;
     lightbox.style.display = "flex";
 }
 
 function closeLightbox() {
     document.getElementById("lightbox").style.display = "none";
+    
+    let nav = document.getElementById("nav");
+    nav.style.display = "flex";
 }
 
 async function createGallery() {
@@ -130,7 +135,7 @@ function disconnect() {
         loggedEmail.textContent = null;
 
         localStorage.removeItem("logged");
-        window.location.href = './home.html';
+        window.location.href = "./home.html";
     }
 }
 
