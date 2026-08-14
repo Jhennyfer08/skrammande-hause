@@ -97,7 +97,6 @@ async function createGallery() {
     } catch (error) {
         document.getElementById("gallery").innerHTML = "";
         console.error(error);
-
         return;
     }
 }

@@ -1,5 +1,5 @@
+import { Users } from "../classes/users.js";
 import { generateToken } from "../auth.js";
-import { executeQuery, executeQueryFile } from "../db.js";
 import { Router } from "express";
 import jwt from "jsonwebtoken";
 import bcrypt from "bcrypt";
@@ -18,10 +18,10 @@ router.post("/register", async (req, res) => {
     }
 
     try {
-        let param = [email];
-        const [user] = await executeQueryFile("./sql/selectUser.sql", param);
+        const user = new Users(email);
+        let result = await user.queryUser();
 
-        if (user.length > 0) {
+        if (result.length > 0) {
             return res.status(409).json({
                 success: false,
                 message: `Usuário já cadastrado.`,
@@ -30,9 +30,7 @@ router.post("/register", async (req, res) => {
 
         const hash = await bcrypt.hash(password, 10);
 
-        param = [email, hash];
-        const result = await executeQueryFile("./sql/insertUser.sql", param);
-        const id = result[0].insertId;
+        const id = await user.createUsers(hash);
 
         const token = generateToken(email);
 
@@ -53,18 +51,18 @@ router.post("/", async (req, res) => {
     const email = req.body.email;
     const password = req.body.password;
 
-    let param = [email];
-    const [user] = await executeQueryFile("./sql/selectUser.sql", param);
-
     try {
-        const encryptPass = user[0].password;
+        const user = new Users(email);
+        const result = await user.queryUser();
+
+        const encryptPass = result.password;
         const validPassword = await bcrypt.compare(password, encryptPass);
 
         if (!validPassword) {
             throw new Error(`Invalid Password`);
         }
 
-        const token = generateToken(user[0].email);
+        const token = generateToken(result.email);
 
         return res.status(200).json({
             success: true,

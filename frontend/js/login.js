@@ -1,27 +1,3 @@
-// function sliderLogin(option) {
-//     const sections = document.querySelectorAll('section');
-//     const slider = document.getElementById('slider');
-
-//     sections.forEach(section => {
-//         if (section.id === option) {
-//             section.classList.remove('hidden');
-//         } else {
-//             section.classList.add('hidden');
-//         }
-//     });
-
-//     if (option === 'register') {
-//         slider.style.transform = "translateX(100%)";
-//         document.getElementById('loginButton').classList.remove('active');
-//         document.getElementById('registerButton').classList.add('active');
-
-//     } else {
-//         slider.style.transform = "translateX(0)";
-//         document.getElementById('loginButton').classList.add('active');
-//         document.getElementById('registerButton').classList.remove('active');
-//     }
-// }
-
 function sliderLogin(option) {
     const isRegister = option === 'register';
     const slider = document.getElementById('slider');
@@ -72,6 +48,47 @@ async function login(event) {
 
     } catch (error) {
         console.error(`Identified error on login ${error}`);
+    }
+}
+
+async function register(event) {
+    event.preventDefault();
+
+    try {
+        const user = {
+            email: document.getElementById('emailRegister').value,
+            password: document.getElementById('passwordRegister').value
+        }
+
+        const confirmPassword = document.getElementById('confirmPasswordRegister').value;
+
+        if (user.password !== confirmPassword) {
+            alert('Confirmar senha precisa ser igual a senha');
+            return
+        }
+
+        const response = await fetch(`http://localhost:3000/login/register`, {
+            method: 'POST',
+            headers: {"Content-Type": "application/json"},
+            body: JSON.stringify(user)
+        });
+
+        const data = await response.json();
+
+        alert(data.message);
+
+        if (data.success === true) {
+            const loggedUser = JSON.stringify({
+                email: user.email,
+                token: data.token
+            });
+
+            localStorage.setItem('logged', loggedUser);
+            window.location.href= './home.html';
+        }
+
+    } catch (error) {
+        console.error(`Identified error on register ${error}`);
     }
 }
 
