@@ -207,25 +207,9 @@ Content-type: application/json
 | id_user | integer | FK do Usuário |
 
 ---
-
-### Checklist
-- Instalar e criar coleções com o POSTMAN APP
-- Documentação
-- Classificação das galeria
-  
-- Consumir as rotas do backend e adicionar token ao localstorage
-- Modificar upload para verificar token do localstorage
-- Criar slider para o login/cadastro
 - Reescrever as interações com tabelas em orientação a objetos.
 
-
-### Projeto teste
-
-- Assim que chegar o projeto teste, lê-lo todo imediatamente
-- Traçar estratégias de execução
-- Elaborar perguntas e marcar reunião remota com o Hiago 
-
-
+### Referências
 https://aarav-sharma-liart.vercel.app/
 https://awrs.me/en
 https://majd-portfolio.framer.website/
