@@ -31,7 +31,6 @@ router.post("/register", async (req, res) => {
         const hash = await bcrypt.hash(password, 10);
 
         const id = await user.createUsers(hash);
-
         const token = generateToken(email);
 
         return res.status(201).json({
@@ -55,7 +54,7 @@ router.post("/", async (req, res) => {
         const user = new Users(email);
         const result = await user.queryUser();
 
-        const encryptPass = result.password;
+        const encryptPass = result[0].password;
         const validPassword = await bcrypt.compare(password, encryptPass);
 
         if (!validPassword) {

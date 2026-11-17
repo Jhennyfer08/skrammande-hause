@@ -12,7 +12,7 @@ export class Users {
     async queryUser() {
         const param = [this.email];
         const [result] = await executeQueryFile("./sql/selectUser.sql", param);
-        return result[0];
+        return result;
     }
 
     async createUsers(hash) {
